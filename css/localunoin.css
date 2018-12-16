@@ -1,0 +1,36 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #ccc;
+}
+#localUnion{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+
+}
+#localUnion .left{
+    width:248px;
+    height:678px;
+    display: block;
+    float: left;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 4px 8px 0px rgba(37,44,63,0.06);
+    border-radius:4px;
+}
+
+#localUnion .right{
+    width: auto;
+    margin-left: 270px;
+    height:678px;
+    float: right;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 4px 8px 0px rgba(37,44,63,0.06);
+    border-radius:4px;
+}
