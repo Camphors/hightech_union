@@ -7,6 +7,7 @@ html,body{
     background-color: #ccc;
 }
 #localUnion{
+    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -15,21 +16,29 @@ html,body{
     -webkit-transform: translate(-50%,-50%);
 
 }
-#localUnion .left{
-    width:248px;
-    height:678px;
+#localUnion:after{
+    content: "";
+    visibility: hidden;
+    clear: both;
     display: block;
-    float: left;
-    background:rgba(255,255,255,1);
-    box-shadow:0px 4px 8px 0px rgba(37,44,63,0.06);
-    border-radius:4px;
+    height: 0;
+}
+#localUnion{
+    zoom: 1;
+}
+
+#localUnion .left{
+    min-width: 248px;
+    height: 678px;
+    background: rgba(255,255,255,1);
+    box-shadow: 0px 4px 8px 0px rgba(37,44,63,0.06);
+    border-radius: 4px;
 }
 
 #localUnion .right{
-    width: auto;
-    margin-left: 270px;
+    min-width:800px;
+    margin-left: 20px;
     height:678px;
-    float: right;
     background:rgba(255,255,255,1);
     box-shadow:0px 4px 8px 0px rgba(37,44,63,0.06);
     border-radius:4px;
