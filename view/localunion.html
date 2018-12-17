@@ -3,13 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <title>基层工会</title>
-    <link type="text/css" rel="stylesheet" href="../css/localunoin.css">
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-table.css">
+    <link type="text/css" rel="stylesheet" href="../css/localunion.css">
 </head>
 <body>
 <div id="localUnion">
     <div class="left"></div>
-    <div class="right"></div>
+    <div class="right">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#all" data-toggle="tab" onclick="getTableList('all')">全部</a></li>
+            <li><a href="#reviewed" data-toggle="tab" onclick="getTableList('reviewed')">已审核</a></li>
+            <li><a href="#waitReview" data-toggle="tab" onclick="getTableList('waitReview')">待审核</a></li>
+            <li><a href="#reject" data-toggle="tab" onclick="getTableList('reject')">已驳回</a></li>
+            <li><a href="#deleteLogs" data-toggle="tab" onclick="getTableList('deleteLogs')">删除日志</a></li>
+        </ul>
+
+
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="all">
+                <div class="header" id="searchPanel">
+                    <div class="form-group">
+                        <label  class="control-label">关键字</label>
+                            <input type="text" class="form-control keyword">
+                    </div>
+                    <div class="form-group">
+                        <label  class="control-label">所属辖区</label>
+                        <input type="text" class="form-control area">
+                    </div>
+                    <span class="searchBtn btn">查询</span>
+                    <span class="resetBtn btn">重置</span>
+                    <span class="advanceSearch">高级查询</span>
+                </div>
+                <div id="showTabList"></div>
+            </div>
+            <div class="tab-pane fade" id="reviewed">
+                <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple
+                    TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+            </div>
+            <div class="tab-pane fade" id="waitReview">
+                <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+            </div>
+            <div class="tab-pane fade" id="reject">
+                <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+                </p>
+            </div>
+            <div class="tab-pane fade" id="deleteLogs">
+                <p>111111</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
 </html>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap-table.js"></script>
+<script>
+    $.ready(function () {
+
+    })
+
+
+    function getTableList(type) {
+        let url = "";
+        switch (type) {
+            case 'all':
+                getDataList(url, type)
+                break;
+            case 'reviewed':
+                break;
+            case 'waitReview':
+                break;
+            case 'reject':
+                break;
+            case 'deleteLogs':
+                break;
+            default:
+                break;
+        }
+    }
+
+    function getDataList(url, type) {
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            type: 'get',
+            success: function (data) {
+                $(".tab-pane").attr('id', type);
+                $("#" + type ).bootstrapTable({ // 对应table标签的id
+                    pagination: true, // 在表格底部显示分页组件，默认false
+                    pageList: [10, 20], // 设置页面可以显示的数据条数
+                    pageSize: 10, // 页面数据条数
+                    pageNumber: 1, // 首页页码
+                    data: data.data,
+                    // queryParams: function (params) { // 请求服务器数据时发送的参数，可以在这里添加额外的查询参数，返回false则终止请求
+                    //     return {
+                    //         pageSize: params.limit, // 每页要显示的数据条数
+                    //         offset: params.offset, // 每页显示数据的开始行号
+                    //         sort: params.sort, // 要排序的字段
+                    //         sortOrder: params.order, // 排序规则
+                    //         dataId: $("#dataId").val() // 额外添加的参数
+                    //     }
+                    // },
+                    columns: [
+                        {
+                            checkbox: true, // 显示一个勾选框
+                            align: 'center', // 居中显示
+                            field: 'id'
+                        }, {
+                            field: 'code', // 返回json数据中的name
+                            title: '基层工会单位名称', // 表格表头显示文字
+                            align: 'center', // 左右居中
+                            valign: 'middle' // 上下居中
+                        }, {
+                            field: 'name',
+                            title: '工会主席',
+                            align: 'center',
+                            valign: 'middle'
+                        }, {
+                            field: 'calcMode',
+                            title: '电话',
+                            align: 'center',
+                            valign: 'middle',
+                        },  {
+                            field: 'calcMode',
+                            title: '联系人',
+                            align: 'center',
+                            valign: 'middle',
+                        },  {
+                            field: 'calcMode',
+                            title: '联系人电话',
+                            align: 'center',
+                            valign: 'middle',
+                        },  {
+                            field: 'calcMode',
+                            title: '工会类型',
+                            align: 'center',
+                            valign: 'middle',
+                        },  {
+                            field: 'calcMode',
+                            title: '所属辖区',
+                            align: 'center',
+                            valign: 'middle',
+                        },  {
+                            field: 'calcMode',
+                            title: '状态',
+                            align: 'center',
+                            valign: 'middle',
+                        }
+                    ],
+                    onLoadSuccess: function () {  //加载成功时执行
+                        console.info("加载成功");
+                    },
+                    onLoadError: function () {  //加载失败时执行
+                        console.info("加载数据失败");
+                    }
+
+                })
+            }
+        })
+
+    }
+</script>
