@@ -520,14 +520,13 @@
     for (let i = 0; i < items.length; i++) {
         items[i].addEventListener("click", function () {
             for(let j = 0; j < items.length; j++){
-                if(!$(items[i]).hasClass('active')){
-                    $(items[i]).addClass("active");
+                if(items[i].className!=='active'){
+                    items[i].classList.add("active");
                 }
                 if(i!==j){
-                    $(items[j]).removeClass("active");
+                    items[j].classList.remove("active");
                 }
             }
-
         });
     }
 
