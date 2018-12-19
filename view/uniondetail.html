@@ -520,7 +520,7 @@
     for (let i = 0; i < items.length; i++) {
         items[i].addEventListener("click", function () {
             for(let j = 0; j < items.length; j++){
-                if(items[i].className!=='active'){
+                if(!items[i].classList.contains('active')){
                     items[i].classList.add("active");
                 }
                 if(i!==j){
