@@ -23,10 +23,10 @@
 
     </div>
     <div class="content">
-        <div class="left-details">
-            <form class="">
+        <div id="left-details">
+            <form>
                 <div id="basicInfo">
-                    <div class="item-header">基础信息</div>
+                    <div class="item-header"><span></span>基础信息</div>
                     <div class="item-title">公司信息</div>
                     <div class="inputPanel firmInfo">
                         <div class="form-group">
@@ -163,9 +163,68 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="commomBasicInfo">
+                    <div class="item-title">主任信息</div>
+                    <div class="inputPanel directorInfo">
+                        <div class="form-group">
+                            <label for="">主任</label>
+                            <input type="text" class="form-control" name="" id="directorName"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="">办公室电话</label>
+                            <input type="text" class="form-control" name="" id="directorNumber"/>
+                        </div>
+                    </div>
+
+                    <div class="item-title">副主任信息</div>
+                    <div class="inputPanel assDirectorInfo">
+                        <div class="form-group">
+                            <label for="">副主任</label>
+                            <input type="text" class="form-control" name="" id="assDirectorName"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="">办公室电话</label>
+                            <input type="text" class="form-control" name="" id="assDirectorNumber"/>
+                        </div>
+                    </div>
+
+                    <div class="item-title">更多信息</div>
+                    <div class="inputPanel moreInfo">
+                        <div class="moreInfo-items">
+                            <div class="form-group">
+                                <label for="">岗位</label>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group">
+                                <label for="">联系人</label>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group">
+                                <label for="">联系电话</label>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                        </div>
+                        <div class="moreInfo-items">
+                            <div class="form-group">
+                                <label for="">岗位</label>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group">
+                                <label for="">联系人</label>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group">
+                                <label for="">联系电话</label>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div id="organStructure">
-                    <div class="item-header">组织结构</div>
-                    <div class="inputPanel organization">
+                    <div class="item-header"><span></span>组织结构</div>
+                    <div class="radioPanel organization">
                         <div class="form-group">
                             <label for="">是否有党组织</label>
                             <span class="radio-group">
@@ -203,37 +262,275 @@
                         </div>
                     </div>
                 </div>
-                <div id="management">
-                    <div class="item-header">民主管理</div>
+                <div id="management" name="management">
+                    <div class="item-header"><span></span>民主管理</div>
+                    <div class="radioPanel staffUnion">
+                        <div class="staffUnion-radio">
+                            <label for="staffUnion">建立职工（代表）大会制度</label>
+                            <span class="radio-group">
+                                <input type="radio" name="staffUnion" value="1"> 职工大会制度
+                                <input type="radio" name="staffUnion" value="2"> 职工代表大会制度
+                                <input type="radio" name="staffUnion" value="0" checked> 未建立
+                            <span/>
+                        </div>
+                        <div class="mix-rdInput">
+                            <div class="form-group">
+                                <label for="">是否实行了厂（事）务公开</label>
+                                <span class="radio-group">
+                                <input type="radio" name="femaleCouncil" value="1" checked> 是
+                                <input type="radio" name="femaleCouncil" value="0"> 否
+                            </span>
+                            </div>
+                            <div class="form-group items">
+                                <label for="affairYear" class="col-sm-2 control-label">年份</label>
+                                <div>
+                                    <input type="text" class="form-control" id="affairYear">
+                                </div>
+                            </div>
+                            <div class="form-group items">
+                                <label for="affairLevel" class="col-sm-2 control-label">级别</label>
+                                <div>
+                                    <input type="text" class="form-control" id="affairLevel">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">是否签订集体合同</label>
+                            <span class="radio-group">
+                                <input type="radio" name="partyOra" value="1"> 是
+                                <input type="radio" name="partyOra" value="0" checked> 否
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">是否建立工资集体协商制度</label>
+                            <span class="radio-group">
+                                <input type="radio" name="femaleCouncil" value="1"> 是
+                                <input type="radio" name="femaleCouncil" value="0" checked> 否
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">是否签订工资专项集体合同</label>
+                            <span class="radio-group">
+                                <input type="radio" name="lawCouncil" value="1"> 是
+                                <input type="radio" name="lawCouncil" value="0" checked> 否
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">是否签订职业病防范专项集体合同</label>
+                            <span class="radio-group">
+                                <input type="radio" name="argueCouncil" value="1"> 是
+                                <input type="radio" name="argueCouncil" value="0" checked> 否
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">是否签订劳动安全卫生专项集体合同</label>
+                            <span class="radio-group">
+                                <input type="radio" name="protectCouncil" value="1"> 是
+                                <input type="radio" name="protectCouncil" value="0" checked> 否
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">是否签订女职工权益保护专项集体合同</label>
+                            <span class="radio-group">
+                                <input type="radio" name="protectCouncil" value="1"> 是
+                                <input type="radio" name="protectCouncil" value="0" checked> 否
+                            </span>
+                        </div>
+
+                    </div>
                 </div>
                 <div id="construction">
-                    <div class="item-header">阵地建设</div>
+                    <div class="item-header"><span></span>阵地建设</div>
+                    <div class="construct-tab">
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class="active"><a href="#momHouse" data-toggle="tab" onclick="getTableList('momHouse')">妈咪之屋</a>
+                            </li>
+                            <li><a href="#bookHouse" data-toggle="tab" onclick="getTableList('bookHouse')">职工书屋</a></li>
+                            <li><a href="#house" data-toggle="tab" onclick="getTableList('house')">职工之家</a></li>
+                            <li><a href="#Trusteeship" data-toggle="tab" onclick="getTableList('Trusteeship')">爱心托管所</a>
+                            </li>
+                            <li><a href="#zone" data-toggle="tab" onclick="getTableList('zone')">创客空间</a></li>
+                        </ul>
+                        <div id="construct-tabDetail">
+                            <div id="momHouse">
+                                <div class="house-input">
+                                    <div class="form-group">
+                                        <label for="constructDate" class="control-label">建设时间</label>
+                                        <input type="text" class="form-control" id="constructDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="constructArea" class="control-label">建设面积</label>
+                                        <input type="text" class="form-control" id="constructArea">
+                                    </div>
+                                </div>
+                                <div class="house-area">
+                                    <div class="form-group">
+                                        <label for="name" class="control-label">基本情况</label>
+                                        <textarea class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
                 <div id="honor">
-                    <div class="item-header">荣誉信息</div>
+                    <div class="item-header"><span></span>荣誉信息</div>
+                    <div id="honor-table" class="bootstrap-table">
+                        <table id="honor-list" class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th style="width: 3%">#</th>
+                                <th style="width: 22%">荣誉类别</th>
+                                <th style="width: 20%">获奖人/获奖单位</th>
+                                <th style="width: 20%">名称</th>
+                                <th style="width: 15%">时间</th>
+                                <th style="width: 15%">颁奖单位</th>
+                                <th style="width: 5%">级别</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>荣誉类别</td>
+                                <td>获奖人/获奖单位</td>
+                                <td>名称</td>
+                                <td>时间</td>
+                                <td>颁奖单位</td>
+                                <td>级别</td>
+                            </tr>
+                            <tr class="addListPanel">
+                                <td><span class="addBtn" onclick="insertData(this)"></span></td>
+                                <td><input type="text"/></td>
+                                <td><input type="text"/></td>
+                                <td><input type="text"/></td>
+                                <td><input type="text"/></td>
+                                <td><input type="text"/></td>
+                                <td><input type="text"/></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div id="remarks">
-                    <div class="item-header">备注</div>
+                    <div class="item-header"><span></span>备注</div>
+                    <input type="text" class="remark"/>
                 </div>
+
+
             </form>
         </div>
-        <div class="right-menu">
-            <ul class="menu-list nav-tabs">
-                <li class="active"><a href="#basicInfo" data-toggle="tab">基础信息</a></li>
-                <li><a href="#organStructure" data-toggle="tab">组织结构</a></li>
-                <li><a href="#management" data-toggle="tab">民主管理</a></li>
-                <li><a href="#construction" data-toggle="tab">阵地建设</a></li>
-                <li><a href="#honor" data-toggle="tab">荣誉信息</a></li>
-                <li><a href="#remarks" data-toggle="tab">备注</a></li>
+        <div id="right-menu">
+            <ul class="nav-tabs menu-list">
+                <li class="active"><a data-target="#basicInfo">基础信息</a></li>
+                <li><a data-target="#organStructure">组织结构</a></li>
+                <li><a data-target="#management">民主管理</a></li>
+                <li><a data-target="#construction">阵地建设</a></li>
+                <li><a data-target="#honor">荣誉信息</a></li>
+                <li><a data-target="#remarks">备注</a></li>
             </ul>
         </div>
 
     </div>
 
 </div>
+
+<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">审核</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="name" name="remark">审核</label>
+                        <select class="form-control">
+                            <option>通过</option>
+                            <option>不通古</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" name="remark">备注</label>
+                        <input type="text" class="form-control"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="modal-btn submitBtn">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">删除确认</h4>
+            </div>
+            <div class="modal-body">
+                <span class="warning-block">
+                     删除后数据不能恢复，确定要删除吗？
+                </span>
+            </div>
+            <div class="modal-footer">
+                <button type="" class="modal-btn cancelBtn">取消</button>
+                <button type="" class="modal-btn deleteBtn">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <!--<script src="${request.contextPath}/static/plugins/jquery/jquery-1.10.2.js"></script>-->
 <script src="../js/bootstrap.min.js"></script>
+
+<script>
+    //审核
+    function review() {
+        $("#reviewModal").modal('show');
+    }
+
+    //删除
+    function deleteDetail() {
+        $("#deleteModal").modal('show');
+    }
+
+    function insertData(item) {
+        var result = `<tr><td>1</td>
+                                <td>荣誉类别</td>
+                                <td>获奖人/获奖单位</td>
+                                <td>名称</td>
+                                <td>时间</td>
+                                <td>颁奖单位</td>
+                                <td>级别</td>
+                            </tr>`;
+        $(".addListPanel").before(result);
+    }
+
+    let result = document.getElementsByClassName("menu-list")[0];
+    let items = result.getElementsByTagName('li');
+    for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", function () {
+            for(let j = 0; j < items.length; j++){
+                if(!$(items[i]).hasClass('active')){
+                    $(items[i]).addClass("active");
+                }
+                if(i!==j){
+                    $(items[j]).removeClass("active");
+                }
+            }
+
+        });
+    }
+
+
+</script>
 

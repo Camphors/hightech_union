@@ -4,8 +4,18 @@ html, body {
     padding: 0;
     margin: 0;
     border: 0;
-    background-color: #ccc;
+    background-color: transparent;
 }
+
+/*公共样式 start*/
+.form-control{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    transition: none;
+}
+/*公共样式 end*/
+
 
 #unionDetail {
     width: auto;
@@ -71,122 +81,509 @@ html, body {
 
 #unionDetail .content {
     width: auto;
-    min-width: 1000px;
-    min-height: 1500px;
+    min-width: 1200px;
+    min-height: 2000px;
     margin-top: 10px;
     top: 70px;
     left: 40px;
     bottom: 30px;
     right: 40px;
     position: absolute;
-    padding: 30px 30px 0px 34px;
+    padding: 30px 30px 0px 54px;
     background-color: #fff;
     border-radius: 4px;
 }
-#unionDetail .left-details{
+
+#unionDetail #left-details {
     position: absolute;
     right: 236px;
-    left: 34px;
-    font-size:12px;
-    font-family:MicrosoftYaHei;
-    font-weight:400;
-    color:rgba(136,136,136,1);
+    left: 54px;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(136, 136, 136, 1);
 }
 
-#unionDetail .left-details .item-header{
-    font-size:14px;
-    font-family:MicrosoftYaHei-Bold;
-    font-weight:bold;
-    color:rgba(31,132,188,1);
-    line-height:50px;
+#unionDetail #left-details .item-header {
+    font-size: 14px;
+    font-family: MicrosoftYaHei-Bold;
+    font-weight: bold;
+    color: rgba(31, 132, 188, 1);
+    line-height: 50px;
+    position: relative;
 }
 
-#unionDetail .left-details .item-title{
+#unionDetail #left-details .item-header span {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: url(../../img/icon/doubletrin.png) no-repeat;
+    position: absolute;
+    background-size: 16px 15px;
+    top: 17px;
+    left: -25px;
+}
+
+#unionDetail #left-details .item-title {
     width: 90%;
     font-size: 13px;
     margin: 5px 0px 0px 0;
     font-family: MicrosoftYaHei-Bold;
     font-weight: bold;
-    color: rgba(31,132,188,1);
+    color: rgba(31, 132, 188, 1);
     line-height: 25px;
-    border-left: 2px solid rgba(31,132,188,1);
+    border-left: 2px solid rgba(31, 132, 188, 1);
     padding-left: 10px;
-    background: -webkit-linear-gradient(left, #E8f2f8 , #fff); /* Safari 5.1 - 6.0 */
+    background: -webkit-linear-gradient(left, #E8f2f8, #fff); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(right, #E8f2f8, #fff); /* Opera 11.1 - 12.0 */
     background: -moz-linear-gradient(right, #E8f2f8, #fff); /* Firefox 3.6 - 15 */
-    background: linear-gradient(to right, #E8f2f8 , #fff); /* 标准的语法 */
-}
-#unionDetail .left-details .inputPanel{
-    width: 100%;
-    display: block;
+    background: linear-gradient(to right, #E8f2f8, #fff); /* 标准的语法 */
 }
 
-#unionDetail .left-details .firmInfo{
-    height: 170px;
-}
-#unionDetail .left-details .unionInfo{
-    height: 240px;
-}
-#unionDetail .left-details .accountInfo{
-    height: 75px;
-}
-#unionDetail .left-details .organization{
-    height: 170px;
-}
-
-#unionDetail .left-details .radio-group{
+#unionDetail #left-details .radio-group {
     width: 100%;
     display: block;
+    height: 52px;
 }
-#unionDetail .left-details .radio-group input+input{
+
+#unionDetail #left-details .radio-group input + input {
     margin-left: 20px;
 }
 
-#unionDetail .left-details .form-group{
+#unionDetail #left-details .form-group {
     display: inline-block;
     float: left;
-    width: 24%;
-    margin-right: 1%;
+    width: 23%;
+    margin-right: 2%;
     margin-bottom: 0;
     margin-top: 20px;
 }
 
-#unionDetail .left-details .form-control{
+#unionDetail #left-details .form-control {
     width: 100%;
     height: 30px;
-    border:1px solid rgba(190,193,198,1);
-    background:rgba(240,242,243,1);
+    background: rgba(240, 242, 243, 1);
+    border: 1px solid rgba(190, 193, 198, 1);
+    opacity: 0.3;
+    border-radius: 4px;
 }
 
-#unionDetail .content .right-menu{
+/*input区域高度  start*/
+#unionDetail #left-details .inputPanel {
+    width: 100%;
+    display: block;
+}
+
+#unionDetail #left-details .firmInfo {
+    height: 170px;
+}
+
+#unionDetail #left-details .unionInfo {
+    height: 240px;
+}
+
+#unionDetail #left-details .directorInfo {
+    height: 80px;
+}
+
+#unionDetail #left-details .accountInfo {
+    height: 80px;
+}
+#unionDetail #left-details .assDirectorInfo {
+    height: 80px;
+}
+#unionDetail #left-details .moreInfo {
+    height: 180px;
+}
+#unionDetail #left-details .moreInfo .moreInfo-items{
+    width: 100%;
+    display: block;
+    height: 75px;
+}
+
+/*input区域高度  end*/
+
+/* 单选按钮区域高度 start*/
+#unionDetail #left-details .radioPanel {
+    width: 100%;
+    display: block;
+}
+
+#unionDetail #left-details .organization {
+    height: 160px;
+}
+
+#unionDetail #left-details .radioPanel .form-group {
+    margin-top: 0px;
+}
+
+#unionDetail #left-details .staffUnion {
+    height: 315px;
+}
+
+#unionDetail #left-details .staffUnion .staffUnion-radio {
+    width: 100%;
+    height: 74px;
+    display: block;
+}
+
+#unionDetail #left-details .staffUnion-radio input + input {
+    margin-left: 40px;
+}
+
+#unionDetail #left-details .staffUnion .mix-rdInput {
+    width: 100%;
+    height: 80px;
+    display: block;
+}
+
+#unionDetail #left-details .staffUnion .mix-rdInput .items {
+    width: 250px;
+    padding-top: 17px;
+}
+
+#unionDetail #left-details .staffUnion .mix-rdInput .items .control-label {
+    padding: 6px 0 0;
+}
+
+#unionDetail #left-details .staffUnion .mix-rdInput .items .form-control {
+    width: 180px;
+}
+
+/* 单选按钮区域高度 end*/
+
+#right-menu .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    border-radius: 6px;
+    background: #E8f2f8;
+    color: #1F84BC;
+    border: none;
+}
+
+.menu-list > li > a:focus, .menu-list > li > a:hover {
+    background-color: transparent;
+    border: none;
+}
+
+#unionDetail .construct-tab {
+    width: 100%;
+    height: 220px;
+    background: #fff;
+    border: 1px solid rgba(235, 236, 238, 1);
+    border-radius: 4px;
+}
+
+#construction ul {
+    width: 95px;
+    border: none;
+    display: inline-block;
+}
+
+#construction .nav-tabs > li {
+    float: none;
+    height: 44px;
+    width: 96px;
+    margin-bottom: 0;
+}
+
+#left-details .nav-tabs > li > a {
+    border: none;
+    padding: 0;
+    line-height: 44px;
+    text-align: center;
+    margin: 0;
+    border-right: 1px solid #ebecee;
+    background-color: #fafbfb;
+    border-radius: 0;
+}
+
+#left-details .nav-tabs > li.active > a {
+    height: 43px;
+    border-bottom: 1px solid #ebecee;
+    border-right: none;
+    background: transparent;
+    border-top: 1px solid #ebecee;
+}
+
+#left-details .nav-tabs li:first-child a{
+    border-top: 0;
+}
+#left-details .nav-tabs li:last-child a{
+    height: 42px;
+}
+#left-details .nav-tabs li.active:last-child a{
+    border-bottom:none;
+}
+
+#construct-tabDetail{
+    display: inline-block;
+    position: absolute;
+    left: 96px;
+    right: 0;
+    padding-left: 30px;
+    line-height: 32px;
+}
+#momHouse .house-input{
+    width: 100%;
+    display: block;
+}
+#unionDetail #left-details #momHouse .house-input .form-group{
+    width: 300px;
+    display: inline-block;
+    height: 32px;
+    margin-right:40px;
+}
+
+#unionDetail #left-details #momHouse .house-input .form-control{
+    width:240px;
+    height:32px;
+    display: inline-block;
+    margin-left: 2px;
+    background:rgba(240,242,243,1);
+    border:1px solid rgba(190,193,198,1);
+    opacity:0.3;
+    border-radius:4px;
+}
+
+#unionDetail #left-details #momHouse .house-area .form-group{
+    width: 635px;
+    display: inline-block;
+    margin-right:45px;
+    margin-top: 15px;
+}
+#momHouse .house-area .control-label{
+    line-height: 32px;
+}
+
+#unionDetail #left-details #momHouse .house-area .form-control{
+    width:580px;
+    height:130px;
+    display: inline-block;
+    padding: 0;
+    margin-left: 2px;
+    background:rgba(240,242,243,1);
+    border:1px solid rgba(190,193,198,1);
+    opacity:0.3;
+    border-radius:4px;
+    vertical-align: top;
+}
+
+#honor #honor-table{
+    width: 100%;
+    min-height: 335px;
+    max-height: 500px;
+    border-bottom: 1px solid #f4f4f4;
+    position: relative;
+    overflow-y: auto;
+}
+#honor #honor-list{
+    width: 100%;
+    /*height: auto;*/
+    /*min-height: 290px;*/
+}
+
+#honor  .table>thead>tr>th{
+    border-bottom: 2px solid #ebecee;
+}
+
+#honor .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    height: 33px!important;
+    padding: 0;
+    margin: 0;
+    line-height: 33px;
+    border-top: none;
+}
+#honor .addListPanel{
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+}
+
+#honor-list  .addBtn{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url(../../img/icon/add.png) no-repeat 1px 1px;
+    background-size: 11px 11px;
+    border: 1px solid rgba(223,223,223,1);
+    border-radius: 2px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+#honor-list input{
+    height:24px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(190,193,198,1);
+    opacity:0.3;
+    border-radius:4px;
+    /*margin-left: 1%;*/
+}
+
+
+
+#remarks .remark{
+    width: 100%;
+    height:32px;
+    display: block;
+    background:rgba(240,242,243,1);
+    border:1px solid rgba(190,193,198,1);
+    opacity:0.3;
+    border-radius:4px;
+}
+
+#reviewModal{
+    width:480px;
+    height:300px;
+    border-radius:6px;
+}
+
+
+/*modal  start*/
+
+#deleteModal{
+    width:480px;
+    height:300px;
+    border-radius:6px;
+}
+.modal{
+    top:20%;
+    left: 20%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.modal-dialog{
+    width:480px;
+    height:300px;
+    margin: 0;
+    padding: 0;
+}
+.modal-header{
+    height: 60px;
+    padding: 20px 26px 20px;
+    border: none;
+}
+.modal-body{
+    padding: 0;
+}
+
+.modal-body .warning-block{
+    width: 100%;
+    display: inline-block;
+    line-height: 140px;
+    font-size: 18px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(105,105,105,1);
+    text-align: center;
+}
+.modal-title{
+    font-size:18px;
+    font-family:MicrosoftYaHei-Bold;
+    font-weight:bold;
+    color:rgba(37,44,63,1);
+}
+
+.modal-body .form-control{
+    width:360px;
+    height:28px;
+    padding: 0 10px 0 10px;
+    margin: 0 auto;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(223,223,223,1);
+    border-radius:4px;
+    font-size:12px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(37,44,63,1);
+    line-height:30px;
+}
+.modal-content{
+    width:100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-content label{
+    font-size:12px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(136,136,136,1);
+    line-height:32px;
+}
+
+.modal-body .form-group{
+    width: 360px;
+    margin: 0 auto;
+}
+
+.modal-footer{
+    border: none;
+    text-align: center;
+}
+.modal-footer .modal-btn + .modal-btn{
+    margin-left: 5px;
+}
+.modal-footer .modal-btn{
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+    padding: 0;
+    border: none;
+}
+
+.modal-footer .submitBtn{
+    background: rgba(31,132,188,1);
+}
+.modal-footer .cancelBtn{
+    background: #91ACB2;
+}
+.modal-footer .deleteBtn{
+    background: #FF4C6C;
+}
+
+
+/*modal end*/
+
+
+
+#unionDetail .content #right-menu {
     width: 206px;
     height: 618px;
-    background: rgba(255,255,255,1);
-    box-shadow: 0px 4px 8px 0px rgba(37,44,63,0.06);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 8px 0px rgba(37, 44, 63, 0.06);
     border-radius: 4px;
     float: right;
 }
-#unionDetail .content .right-menu ul{
+
+#unionDetail .content #right-menu ul {
     padding: 0;
     margin: 0;
 }
 
-
-#unionDetail .content .right-menu ul li{
+#unionDetail .content #right-menu ul li {
     width: 186px;
     height: 44px;
     list-style: none;
     margin: 0 auto;
 }
 
-#unionDetail .content .right-menu .nav-tabs>li{
+#unionDetail .content #right-menu .nav-tabs > li {
     float: none;
 }
-#unionDetail .content  .menu-list{
+
+#unionDetail .content .menu-list {
     border: none;
 }
 
-#unionDetail .content  .menu-list>li a{
+.content .menu-list > li a {
     width: 186px;
     height: 44px;
     display: inline-block;
@@ -198,22 +595,6 @@ html, body {
     text-decoration: none;
 }
 
-
-#unionDetail .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-    border-radius:4px 4px 0px 0px;
-    background:#E8f2f8;
-    color:#1F84BC;
-    border: none;
-}
-/*.menu-list>li.active>a, .menu-list>li.active>a:focus, .menu-list>li.active>a:hover{*/
-    /*border-radius:4px 4px 0px 0px;*/
-    /*color:#252C3F;*/
-    /*border: none;*/
-/*}*/
-.menu-list>li>a:focus,.menu-list>li >a:hover{
-    background-color: transparent;
-    border: none;
-}
 
 
 
