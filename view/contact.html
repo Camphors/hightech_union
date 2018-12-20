@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>通讯录</title>
+    <!--<link type="text/css" rel="stylesheet" href="${request.contextPath}/static/css/bootstrap/bootstrap.min.css">-->
+    <!--<link type="text/css" rel="stylesheet" href="${request.contextPath}/static/css/bootstrap/bootstrap-table.css">-->
+    <!--<link type="text/css" rel="stylesheet" href="${request.contextPath}/static/css/union/contact.css">-->
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+<div id="contact">
+    <div class="sys-section">
+        <div class="left">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            成都高新区工会办事处
+                        </span>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <ul class="cdht">
+                                <li>成都高新区桂溪街道总工会</li>
+                                <li>成都高新区桂溪街道总工会</li>
+                                <li>成都高新区桂溪街道总工会</li>
+                                <li>成都高新区桂溪街道总工会</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div id="myTabContent" class="tab-content">
+                <p>成都高新区工会办事处</p>
+                <div class="contact-item">
+                    <span class="office">主任办公室</span>
+                    <span class="detailInfo place">主任:<a>XX</a></span>
+                    <span class="detailInfo mobile">办公电话:<a>XX</a></span>
+                    <span class="detailInfo address">地址:<a>XX</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="office">主任办公室</span>
+                    <span class="detailInfo place">主任:<a></a></span>
+                    <span class="detailInfo mobile">办公电话:<a></a></span>
+                    <span class="detailInfo address">地址:<a></a></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<!--<script src="${request.contextPath}/static/plugins/jquery/jquery-1.10.2.js"></script>-->
+<!--<script src="${request.contextPath}/static/js/bootstrap/bootstrap.min.js"></script>-->
+<!--<script src="${request.contextPath}/static/js/bootstrap/bootstrap-table.js"></script>-->
+<script>
+    $.ready(function () {
+
+    })
+
+
+    function getTableList(type) {
+        let url = "";
+        switch (type) {
+            case 'all':
+                getDataList(url, type)
+                break;
+            case 'reviewed':
+                break;
+            case 'waitReview':
+                break;
+            case 'reject':
+                break;
+            case 'deleteLogs':
+                break;
+            default:
+                break;
+        }
+    }
+
+    function getDataList(url, type) {
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            type: 'get',
+            success: function (data) {
+                $(".tab-pane").attr('id', type);
+                $("#" + type).bootstrapTable({ // 对应table标签的id
+                    pagination: true, // 在表格底部显示分页组件，默认false
+                    pageList: [10, 20], // 设置页面可以显示的数据条数
+                    pageSize: 10, // 页面数据条数
+                    pageNumber: 1, // 首页页码
+                    data: data.data,
+                    // queryParams: function (params) { // 请求服务器数据时发送的参数，可以在这里添加额外的查询参数，返回false则终止请求
+                    //     return {
+                    //         pageSize: params.limit, // 每页要显示的数据条数
+                    //         offset: params.offset, // 每页显示数据的开始行号
+                    //         sort: params.sort, // 要排序的字段
+                    //         sortOrder: params.order, // 排序规则
+                    //         dataId: $("#dataId").val() // 额外添加的参数
+                    //     }
+                    // },
+                    columns: [
+                        {
+                            checkbox: true, // 显示一个勾选框
+                            align: 'center', // 居中显示
+                            field: 'id'
+                        }, {
+                            field: 'code', // 返回json数据中的name
+                            title: '基层工会单位名称', // 表格表头显示文字
+                            align: 'center', // 左右居中
+                            valign: 'middle' // 上下居中
+                        }, {
+                            field: 'name',
+                            title: '工会主席',
+                            align: 'center',
+                            valign: 'middle'
+                        }, {
+                            field: 'calcMode',
+                            title: '电话',
+                            align: 'center',
+                            valign: 'middle',
+                        }, {
+                            field: 'calcMode',
+                            title: '联系人',
+                            align: 'center',
+                            valign: 'middle',
+                        }, {
+                            field: 'calcMode',
+                            title: '联系人电话',
+                            align: 'center',
+                            valign: 'middle',
+                        }, {
+                            field: 'calcMode',
+                            title: '工会类型',
+                            align: 'center',
+                            valign: 'middle',
+                        }, {
+                            field: 'calcMode',
+                            title: '所属辖区',
+                            align: 'center',
+                            valign: 'middle',
+                        }, {
+                            field: 'calcMode',
+                            title: '状态',
+                            align: 'center',
+                            valign: 'middle',
+                        }
+                    ],
+                    onLoadSuccess: function () {  //加载成功时执行
+                        console.info("加载成功");
+                    },
+                    onLoadError: function () {  //加载失败时执行
+                        console.info("加载数据失败");
+                    }
+
+                })
+            }
+        })
+
+    }
+</script>
